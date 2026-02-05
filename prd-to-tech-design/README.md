@@ -49,7 +49,47 @@
 
 更多架构图说明请查看 [docs/README.md](./docs/README.md)
 
-## 安装
+## 🚀 快速开始
+
+**第一次使用？** 查看 [QUICKSTART.md](./QUICKSTART.md) 快速上手！
+
+### 1. 安装依赖
+
+```bash
+cd prd-to-tech-design
+pip install -r requirements.txt
+```
+
+### 2. 验证安装
+
+```bash
+./scripts/test-plugin.sh
+```
+
+### 3. 启动插件
+
+```bash
+claude --plugin-dir ./
+```
+
+### 4. 生成技术方案
+
+在Claude Code中运行：
+
+```
+> /prd-to-tech-design:generate-tech-design
+```
+
+选择输入方式并按提示操作即可！
+
+📖 **详细使用指南**：[docs/USAGE.md](./docs/USAGE.md)
+
+## 📚 文档导航
+
+- [QUICKSTART.md](./QUICKSTART.md) - 新手快速开始（5分钟上手）
+- [docs/USAGE.md](./docs/USAGE.md) - 完整使用指南
+- [docs/README.md](./docs/README.md) - 架构图说明
+- [examples/sample-prd.md](./examples/sample-prd.md) - 示例PRD
 
 1. 安装Python依赖：
 ```bash

@@ -1,0 +1,56 @@
+{
+  "name": "prd-to-tech-design",
+  "version": "1.0.0",
+  "description": "将产品需求文档（PRD）转换为完整的技术设计文档。支持本地Markdown文件和飞书在线文档。",
+  "author": {
+    "name": "您的名字",
+    "email": "your.email@example.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/prd-to-tech-design",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/prd-to-tech-design.git"
+  },
+  "keywords": ["prd", "技术设计", "文档生成", "飞书", "需求分析"],
+  "capabilities": {
+    "commands": [
+      {
+        "name": "generate-tech-design",
+        "description": "根据PRD生成技术设计文档"
+      },
+      {
+        "name": "config-feishu",
+        "description": "配置飞书API凭据"
+      }
+    ],
+    "agents": [
+      "prd-analyzer",
+      "tech-design-generator"
+    ],
+    "skills": [
+      "prd-analysis"
+    ]
+  },
+  "environment": {
+    "required": ["CLAUDE_PLUGIN_ROOT"],
+    "optional": ["FEISHU_APP_ID", "FEISHU_APP_SECRET", "TECH_DESIGN_OUTPUT_DIR", "LOG_LEVEL"]
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Bash",
+      "WebSearch",
+      "AskUserQuestion"
+    ]
+  },
+  "dependencies": {
+    "python": ">=3.8",
+    "packages": [
+      "lark-oapi>=1.1.0",
+      "requests>=2.31.0",
+      "python-dotenv>=1.0.0"
+    ]
+  }
+}

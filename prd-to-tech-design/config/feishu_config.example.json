@@ -1,0 +1,6 @@
+{
+  "app_id": "your_feishu_app_id_here",
+  "app_secret": "your_feishu_app_secret_here",
+  "base_url": "https://open.feishu.cn",
+  "notes": "Copy this file to feishu_config.json and fill in your credentials. Get your credentials from https://open.feishu.cn/app"
+}

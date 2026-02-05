@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; font-size: 28px; font-weight: bold; fill: #333; }
+      .label { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; font-size: 14px; fill: #333; }
+      .small-label { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; font-size: 12px; fill: #666; }
+      .component { stroke: #333; stroke-width: 2; }
+      .lifeline { stroke: #999; stroke-width: 1; stroke-dasharray: 5,5; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .return-arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); stroke-dasharray: 5,5; }
+      .activation { fill: #e3f2fd; stroke: #1976d2; }
+      .note { fill: #fff9c4; stroke: #f57f17; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1600" height="1000" fill="#f8f9fa"/>
+
+  <!-- 标题 -->
+  <text x="800" y="40" text-anchor="middle" class="title">组件交互时序图</text>
+
+  <!-- 组件列 -->
+  <rect x="100" y="80" width="140" height="50" class="component" fill="#e3f2fd" stroke="#1976d2" rx="5"/>
+  <text x="170" y="110" text-anchor="middle" class="label" font-weight="bold">用户</text>
+
+  <rect x="300" y="80" width="160" height="50" class="component" fill="#e8f5e9" stroke="#4caf50" rx="5"/>
+  <text x="380" y="110" text-anchor="middle" class="label" font-weight="bold">generate-tech-design</text>
+
+  <rect x="520" y="80" width="160" height="50" class="component" fill="#f3e5f5" stroke="#9c27b0" rx="5"/>
+  <text x="600" y="110" text-anchor="middle" class="label" font-weight="bold">prd_parser.py</text>
+
+  <rect x="740" y="80" width="160" height="50" class="component" fill="#f3e5f5" stroke="#9c27b0" rx="5"/>
+  <text x="820" y="110" text-anchor="middle" class="label" font-weight="bold">prd-analyzer Agent</text>
+
+  <rect x="960" y="80" width="200" height="50" class="component" fill="#f3e5f5" stroke="#9c27b0" rx="5"/>
+  <text x="1060" y="110" text-anchor="middle" class="label" font-weight="bold">tech-design-generator Agent</text>
+
+  <rect x="1220" y="80" width="160" height="50" class="component" fill="#fce4ec" stroke="#e91e63" rx="5"/>
+  <text x="1300" y="110" text-anchor="middle" class="label" font-weight="bold">template.md</text>
+
+  <rect x="1440" y="80" width="120" height="50" class="component" fill="#e0f2f1" stroke="#009688" rx="5"/>
+  <text x="1500" y="110" text-anchor="middle" class="label" font-weight="bold">输出文件</text>
+
+  <!-- 生命线 -->
+  <line x1="170" y1="130" x2="170" y2="920" class="lifeline"/>
+  <line x1="380" y1="130" x2="380" y2="920" class="lifeline"/>
+  <line x1="600" y1="130" x2="600" y2="920" class="lifeline"/>
+  <line x1="820" y1="130" x2="820" y2="920" class="lifeline"/>
+  <line x1="1060" y1="130" x2="1060" y2="920" class="lifeline"/>
+  <line x1="1300" y1="130" x2="1300" y2="920" class="lifeline"/>
+  <line x1="1500" y1="130" x2="1500" y2="920" class="lifeline"/>
+
+  <!-- 激活条 -->
+  <rect x="165" y="160" width="10" height="30" class="activation"/>
+  <rect x="375" y="170" width="10" height="700" class="activation"/>
+  <rect x="595" y="200" width="10" height="60" class="activation"/>
+  <rect x="815" y="280" width="10" height="120" class="activation"/>
+  <rect x="1055" y="430" width="10" height="380" class="activation"/>
+  <rect x="1295" y="480" width="10" height="50" class="activation"/>
+  <rect x="1495" y="760" width="10" height="40" class="activation"/>
+
+  <!-- 交互流程 -->
+
+  <!-- 1. 用户调用命令 -->
+  <line x1="175" y1="175" x2="375" y2="175" class="arrow"/>
+  <text x="275" y="170" text-anchor="middle" class="small-label">1. /prd-to-tech-design:generate-tech-design</text>
+
+  <!-- 2. 询问输入来源 -->
+  <line x1="385" y1="200" x2="175" y2="200" class="return-arrow"/>
+  <text x="275" y="195" text-anchor="middle" class="small-label">2. 询问：如何提供PRD？</text>
+
+  <!-- 3. 用户选择并提供PRD -->
+  <line x1="175" y1="225" x2="375" y2="225" class="arrow"/>
+  <text x="275" y="220" text-anchor="middle" class="small-label">3. 选择输入方式 + 提供PRD内容</text>
+
+  <!-- 4. 调用PRD解析器 -->
+  <line x1="385" y1="250" x2="595" y2="250" class="arrow"/>
+  <text x="490" y="245" text-anchor="middle" class="small-label">4. 解析PRD内容</text>
+
+  <!-- 5. 返回原始内容 -->
+  <line x1="595" y1="280" x2="385" y2="280" class="return-arrow"/>
+  <text x="490" y="275" text-anchor="middle" class="small-label">5. 返回PRD文本内容</text>
+
+  <!-- 6. 调用PRD分析Agent -->
+  <line x1="385" y1="310" x2="815" y2="310" class="arrow"/>
+  <text x="600" y="305" text-anchor="middle" class="small-label">6. 分析PRD（提取需求、用户故事、约束）</text>
+
+  <!-- 注释：PRD分析过程 -->
+  <rect x="740" y="330" width="180" height="60" class="note" rx="3"/>
+  <text x="830" y="350" text-anchor="middle" class="small-label">• 提取功能需求 (FR)</text>
+  <text x="830" y="365" text-anchor="middle" class="small-label">• 提取用户故事 (US)</text>
+  <text x="830" y="380" text-anchor="middle" class="small-label">• 识别约束和风险</text>
+
+  <!-- 7. 返回分析结果 -->
+  <line x1="815" y1="400" x2="385" y2="400" class="return-arrow"/>
+  <text x="600" y="395" text-anchor="middle" class="small-label">7. 返回结构化分析数据</text>
+
+  <!-- 8. 调用技术方案生成Agent -->
+  <line x1="385" y1="450" x2="1055" y2="450" class="arrow"/>
+  <text x="720" y="445" text-anchor="middle" class="small-label">8. 生成技术方案（传入分析数据）</text>
+
+  <!-- 9. 读取模板 -->
+  <line x1="1065" y1="490" x2="1295" y2="490" class="arrow"/>
+  <text x="1180" y="485" text-anchor="middle" class="small-label">9. 读取技术设计模板</text>
+
+  <!-- 10. 返回模板内容 -->
+  <line x1="1295" y1="530" x2="1065" y2="530" class="return-arrow"/>
+  <text x="1180" y="525" text-anchor="middle" class="small-label">10. 返回模板内容</text>
+
+  <!-- 注释：生成过程 -->
+  <rect x="960" y="560" width="220" height="100" class="note" rx="3"/>
+  <text x="1070" y="580" text-anchor="middle" class="small-label" font-weight="bold">生成8个章节内容：</text>
+  <text x="1070" y="600" text-anchor="middle" class="small-label">1. 功能概述</text>
+  <text x="1070" y="615" text-anchor="middle" class="small-label">2. 技术栈选型</text>
+  <text x="1070" y="630" text-anchor="middle" class="small-label">3-6. 模块/数据库/API/部署</text>
+  <text x="1070" y="645" text-anchor="middle" class="small-label">7. 风险评估</text>
+  <text x="1070" y="660" text-anchor="middle" class="small-label">8. 开发计划</text>
+
+  <!-- 11. 生成Mermaid图表 -->
+  <rect x="1060" y="680" width="10" height="80" fill="#e3f2fd" stroke="#1976d2"/>
+  <text x="1120" y="700" class="small-label" fill="#666">生成图表：</text>
+  <text x="1120" y="720" class="small-label" fill="#666">• 系统架构图</text>
+  <text x="1120" y="735" class="small-label" fill="#666">• ER图、流程图</text>
+  <text x="1120" y="750" class="small-label" fill="#666">• 部署架构图、甘特图</text>
+
+  <!-- 12. 返回完整文档 -->
+  <line x1="1055" y1="780" x2="385" y2="780" class="return-arrow"/>
+  <text x="720" y="775" text-anchor="middle" class="small-label">12. 返回完整技术设计文档（Markdown + Mermaid）</text>
+
+  <!-- 13. 确认输出位置 -->
+  <line x1="385" y1="810" x2="175" y2="810" class="return-arrow"/>
+  <text x="275" y="805" text-anchor="middle" class="small-label">13. 确认：保存至 outputs/YYYY/MM-DD/xxx.md</text>
+
+  <!-- 14. 用户确认 -->
+  <line x1="175" y1="840" x2="375" y2="840" class="arrow"/>
+  <text x="275" y="835" text-anchor="middle" class="small-label">14. 用户确认</text>
+
+  <!-- 15. 写入文件 -->
+  <line x1="385" y1="870" x2="1495" y2="870" class="arrow"/>
+  <text x="940" y="865" text-anchor="middle" class="small-label">15. 写入技术设计文档</text>
+
+  <!-- 16. 完成 -->
+  <line x1="1495" y1="900" x2="175" y2="900" class="return-arrow"/>
+  <text x="835" y="895" text-anchor="middle" class="small-label">16. 完成：文档已生成</text>
+
+</svg>

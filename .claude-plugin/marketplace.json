@@ -1,0 +1,60 @@
+{
+  "name": "liangliang1259-plugins",
+  "displayName": "亮亮的 Claude Code 插件集合",
+  "description": "实用的 Claude Code 插件集合，包括 PRD 转技术设计文档等工具",
+  "version": "1.0.0",
+  "owner": {
+    "name": "liangliang1259",
+    "email": "liangliang1259@users.noreply.github.com",
+    "url": "https://github.com/liangliang1259"
+  },
+  "homepage": "https://github.com/liangliang1259/claude-code-plugins",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liangliang1259/claude-code-plugins.git"
+  },
+  "plugins": [
+    {
+      "name": "prd-to-tech-design",
+      "displayName": "PRD 转技术设计文档",
+      "description": "将产品需求文档（PRD）自动转换为完整的技术设计文档。支持本地 Markdown 文件和飞书在线文档。",
+      "version": "1.0.0",
+      "source": "./prd-to-tech-design",
+      "homepage": "https://github.com/liangliang1259/claude-code-plugins/tree/main/prd-to-tech-design",
+      "author": {
+        "name": "liangliang1259"
+      },
+      "tags": ["prd", "技术设计", "文档生成", "飞书", "需求分析", "tech-design"],
+      "capabilities": {
+        "commands": [
+          {
+            "name": "generate-tech-design",
+            "description": "根据PRD生成技术设计文档"
+          },
+          {
+            "name": "config-feishu",
+            "description": "配置飞书API凭据"
+          }
+        ],
+        "agents": ["prd-analyzer", "tech-design-generator"],
+        "skills": ["prd-analysis"]
+      },
+      "dependencies": {
+        "python": ">=3.8",
+        "packages": [
+          "lark-oapi>=1.1.0",
+          "requests>=2.31.0",
+          "python-dotenv>=1.0.0"
+        ]
+      },
+      "install": {
+        "steps": [
+          "cd prd-to-tech-design",
+          "pip install -r requirements.txt"
+        ]
+      }
+    }
+  ],
+  "categories": ["documentation", "productivity", "development"],
+  "keywords": ["PRD", "技术设计", "文档生成", "飞书", "中文", "Chinese"]
+}

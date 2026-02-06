@@ -1,6 +1,6 @@
 {
   "name": "prd-to-tech-design",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "将产品需求文档（PRD）转换为完整的技术设计文档。支持本地Markdown文件和飞书在线文档。",
   "author": {
     "name": "leon.sun",
@@ -9,5 +9,17 @@
   "license": "MIT",
   "homepage": "https://github.com/yourusername/prd-to-tech-design",
   "repository": "https://github.com/yourusername/prd-to-tech-design.git",
-  "keywords": ["prd", "技术设计", "文档生成", "飞书", "需求分析"]
+  "keywords": ["prd", "技术设计", "文档生成", "飞书", "需求分析"],
+  "changelog": {
+    "1.0.1": [
+      "添加完整的 Python 实现模块（utils, prd_parser, feishu_client）",
+      "实现输出验证和后处理 hook 脚本",
+      "添加技术设计文档模板",
+      "完善 PRD 解析功能（支持章节、需求、用户故事提取）",
+      "添加飞书 API 集成支持"
+    ],
+    "1.0.0": [
+      "初始版本发布"
+    ]
+  }
 }

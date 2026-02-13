@@ -20,6 +20,18 @@
       },
       "keywords": ["prd", "技术设计", "文档生成", "飞书", "需求分析", "tech-design"],
       "category": "documentation"
+    },
+    {
+      "name": "prd-generator",
+      "description": "生成全面、结构良好的产品需求文档（PRD），遵循行业最佳实践。支持5种PRD模板、交互式需求收集、版本管理和飞书集成。",
+      "version": "1.0.0",
+      "source": "./prd-generator",
+      "homepage": "https://github.com/liangliang1259/claude-code-plugins/tree/main/prd-generator",
+      "author": {
+        "name": "liangliang1259"
+      },
+      "keywords": ["prd", "产品需求", "文档生成", "产品管理", "用户故事", "飞书", "版本管理"],
+      "category": "documentation"
     }
   ]
 }

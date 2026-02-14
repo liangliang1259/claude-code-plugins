@@ -1,0 +1,13 @@
+{
+  "name": "frontend-design",
+  "version": "1.0.0",
+  "description": "创建独特、高质量的前端界面，避免通用的AI生成美学，注重设计细节和创意选择",
+  "author": {
+    "name": "liangliang1259",
+    "email": "liangliang1259@example.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/liangliang1259/claude-code-plugins",
+  "repository": "https://github.com/liangliang1259/claude-code-plugins",
+  "keywords": ["frontend", "design", "ui", "ux", "界面设计", "前端开发", "创意设计"]
+}

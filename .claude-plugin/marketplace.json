@@ -32,6 +32,18 @@
       },
       "keywords": ["prd", "产品需求", "文档生成", "产品管理", "用户故事", "飞书", "版本管理"],
       "category": "documentation"
+    },
+    {
+      "name": "frontend-design",
+      "description": "创建独特、高质量的前端界面，避免通用的AI生成美学，注重设计细节和创意选择。支持10+种美学风格。",
+      "version": "1.0.0",
+      "source": "./frontend-design",
+      "homepage": "https://github.com/liangliang1259/claude-code-plugins/tree/main/frontend-design",
+      "author": {
+        "name": "liangliang1259"
+      },
+      "keywords": ["frontend", "design", "ui", "ux", "界面设计", "前端开发", "创意设计"],
+      "category": "development"
     }
   ]
 }

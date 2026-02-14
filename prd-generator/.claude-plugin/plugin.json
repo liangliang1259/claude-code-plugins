@@ -9,17 +9,5 @@
   "license": "MIT",
   "homepage": "https://github.com/liangliang1259/claude-code-plugins",
   "repository": "https://github.com/liangliang1259/claude-code-plugins",
-  "keywords": ["prd", "产品需求", "文档生成", "产品管理", "用户故事", "飞书"],
-  "changelog": {
-    "1.0.0": [
-      "初始版本发布",
-      "支持5种PRD格式（标准、精益、单页、技术、设计）",
-      "交互式需求发现工作流",
-      "用户故事生成",
-      "成功指标框架（AARRR、HEART、OKRs）",
-      "PRD验证功能",
-      "飞书文档集成",
-      "PRD版本管理"
-    ]
-  }
+  "keywords": ["prd", "产品需求", "文档生成", "产品管理", "用户故事", "飞书"]
 }
